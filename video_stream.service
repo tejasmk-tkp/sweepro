@@ -1,0 +1,13 @@
+[Unit]
+Description=Video Stream Script
+After=network.target
+
+[Service]
+ExecStart=/home/sweepro/Downloads/sweepro/.venv/bin/python3 /home/sweepro/Downloads/sweepro/stream.py
+WorkingDirectory=/home/sweepro/Downloads/sweepro
+Restart=always
+User=sweepro
+Environment="XDG_RUNTIME_DIR=/run/user/1000"
+
+[Install]
+WantedBy=multi-user.target
